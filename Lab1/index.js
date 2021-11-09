@@ -1,3 +1,4 @@
+// Lab1 generate ethereum address
 const ethUtil = require('ethereumjs-util')
 const crypto = require('crypto');
 
