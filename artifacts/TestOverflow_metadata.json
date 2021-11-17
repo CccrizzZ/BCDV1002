@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.6+commit.11564f7e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "a",
+						"type": "uint8"
+					}
+				],
+				"name": "addOne",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Exercises\\Overflow.sol": "TestOverflow"
+		},
+		"evmVersion": "berlin",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Exercises\\Overflow.sol": {
+			"keccak256": "0xfd1ddceb7bb4bfb8784c0946e5a95626bbfd3ef34cf132dca82ab923a70038e6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9de29df51479be042e829dbb5ed8c9121a5cf3ec04dcd0023afe6cb9e184df9a",
+				"dweb:/ipfs/QmUQG4MHdcGSZ3CSHdcKxEjRVa51tbUoRQFs1B2Mn8G4nY"
+			]
+		}
+	},
+	"version": 1
+}

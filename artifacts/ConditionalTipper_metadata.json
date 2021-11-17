@@ -1,0 +1,62 @@
+{
+	"compiler": {
+		"version": "0.8.6+commit.11564f7e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "tipjar",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "limit",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "constructor"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Exercises\\ConditionalTipper.sol": "ConditionalTipper"
+		},
+		"evmVersion": "berlin",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Exercises\\ConditionalTipper.sol": {
+			"keccak256": "0x8aeff08545e4b47e1e086df01ce2f3f22145224c79e72a00d3a7b319bacac97b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a772ac47e60c9f035321512573f76f30af36867520c983cc11a03f0d03310bff",
+				"dweb:/ipfs/QmYYsnGkoNXYoGF6Q26CbD94cbk9iqwFwyMhwfaZEWab4H"
+			]
+		}
+	},
+	"version": 1
+}

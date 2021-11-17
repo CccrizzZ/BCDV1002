@@ -1,10 +1,14 @@
+// SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.6;
 
 contract CoinFlipGame {
+  
+  address owner;
 
   // payable contructor means that the deployer should deposite some ether when deploying
-  constructor() public payable {
-
+  constructor() payable {
+    owner = msg.sender;
   }
   
   // win and lose event
@@ -17,14 +21,17 @@ contract CoinFlipGame {
     
     // if bet is bigger than 1/10th of the contract balance 
     // reject and throw msg "bet size too big"
-    require(msg.value <= maxBet(), "bet size too big");
+    require(msg.value >= maxBet(), "bet size too big");
     
+
+
     // run the generateRandomBit function to determine win or lose
     if (generateRandomBit()) {
       // emit win state
       emit LogWin(msg.value);
+
       // send the deployer double the contract amount
-      msg.sender.transfer(msg.value * 2);
+      payable(msg.sender).transfer(msg.value * 2);
 
     } else {
       // emit lose state
@@ -40,11 +47,23 @@ contract CoinFlipGame {
   }
   
 
+  function getContractBalance()public view returns(uint256) {
+    return address(this).balance;
+  }
+  
+  
+  function getOwnerAddress()public view returns(address) {
+    return owner;
+  }
+
 
   // this function is problematic
+  // The generateRandomBit() function uses several of the solidity
+  // special variables, and combines them with the hash function keccak256().
+  // returns true or false randomly
   function generateRandomBit() private view returns(bool) {
     bytes32 hash = keccak256(
-    abi.encodePacked(
+      abi.encodePacked(
         msg.sender,
         msg.value,
         block.number,
