@@ -28,7 +28,7 @@ const GanacheWallet1 = new ethers.Wallet(PrivateKey1, provider)
 // my metamask account
 const MyAddress = "0x80E129d94cEfB5ccB2DF24A906e576762426e952"
 
-
+// feed back: use async/await next time instead of then
 // send from ganache account to metamask
 GanacheWallet1.sendTransaction({
   to: MyAddress,

