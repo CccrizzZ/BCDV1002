@@ -3,9 +3,13 @@ const crypto = require('crypto');
 
 
 
-// private key and address of recipient wallet
-let privateKey = '0x4f3edf983ac636a65a842ce7c78d9aa706d3b113bce9c46f30d7d21715b23b1d';
-let to = '0xffcf8fdee72ac11b5c542428b35eef5769c409f0';
+// private key of sender
+let privateKey = '6d36bf1b9fdd209a2a63d0c245d994df53725f6c3bd87f41065db0d69d9a1d08';
+
+// recipient address
+let to = '0xD1b6A3D73F29E078D8E0119Ec253293eCD5B0eA7';
+
+// amount of ether to send
 let amount = '1.0';
 
 // generate nonce for hashing
@@ -13,7 +17,7 @@ let randomBytes = crypto.randomBytes(32)
 let nonce = ethers.utils.hexZeroPad(randomBytes, 32)
 
 // presonal bank contract address
-let personalBank = ''
+let personalBank = '0x2b7Ad386A165ecEC194B428c66E5A022934f0eA3'
 
 // function to sign a payment
 async function signPayment() {
@@ -26,10 +30,10 @@ async function signPayment() {
     // HexZeroPad(x,length) will return x padded to length bytes
     // concat([]) convert bytes array into uint8 array
     let message = ethers.utils.concat([
-        ethers.utils.hexZeroPad(to, 20),
-        ethers.utils.hexZeroPad(ethers.utils.hexlify(amountWei), 32),   // hexlify convert int to hexstring
-        ethers.utils.hexZeroPad(personalBank, 20),
-        nonce
+        ethers.utils.hexZeroPad(to, 20),  // to address
+        ethers.utils.hexZeroPad(ethers.utils.hexlify(amountWei), 32),  // amount // hexlify convert int to hexstring
+        ethers.utils.hexZeroPad(personalBank, 20),   // contract address
+        nonce  // nonce generated
     ]);
 
     // create message hash
